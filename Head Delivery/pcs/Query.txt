@@ -1,0 +1,87 @@
+SELECT bl,rotation,edo_application_by_cf_copy.cont_status,igm_detail_container_copy.cont_number
+FROM edo_application_by_cf_copy
+INNER JOIN igm_details_copy ON edo_application_by_cf_copy.bl=igm_details_copy.BL_No
+INNER JOIN igm_detail_container_copy ON igm_detail_container_copy.igm_detail_id=igm_details_copy.id
+ORDER BY edo_application_by_cf_copy.id DESC
+
+
+SELECT bl,rotation,edo_application_by_cf_copy.cont_status,igm_sup_detail_container_copy.cont_number
+FROM edo_application_by_cf_copy
+INNER JOIN igm_supplimentary_detail_copy ON edo_application_by_cf_copy.bl=igm_supplimentary_detail_copy.BL_No
+INNER JOIN igm_sup_detail_container_copy ON igm_sup_detail_container_copy.igm_sup_detail_id=igm_supplimentary_detail_copy.id
+
+
+
+SELECT bl,rotation,igm_sup_detail_container_copy.cont_status,igm_sup_detail_container_copy.cont_number
+FROM edo_application_by_cf_copy
+INNER JOIN igm_supplimentary_detail_copy ON edo_application_by_cf_copy.bl=igm_supplimentary_detail_copy.BL_No
+INNER JOIN igm_sup_detail_container_copy ON igm_sup_detail_container_copy.igm_sup_detail_id=igm_supplimentary_detail_copy.id
+
+
+
+SELECT * FROM igm_sup_detail_container_copy WHERE cont_number='BEAU2730181'
+
+SELECT * FROM edo_application_by_cf_copy WHERE bl='NYR20210919'
+
+UPDATE igm_sup_detail_container_copy SET cont_status='FCL' WHERE id='2980557'
+
+
+SELECT * FROM igm_sup_detail_container_copy WHERE cont_number='BEAU2730181'
+
+
+
+ SELECT edoapplica0_.id AS id1_0_, edoapplica0_.bl AS bl2_0_, edoapplica0_.cont_status AS cont_sta3_0_, edoapplica0_.rotation AS rotation4_0_ FROM edo_application_by_cf_copy edoapplica0_ WHERE edoapplica0_.rotation='2021/5559' AND edoapplica0_.bl='NYR20210919'
+
+
+UPDATE igm_sup_detail_container_copy SET cont_status=? WHERE id=?
+
+ORDER BY edo_application_by_cf_copy.id DESC
+
+
+
+SELECT igm_sup_detail_container_copy.id,cont_status,Import_Rotation_No,BL_No,cont_number
+		FROM igm_supplimentary_detail_copy 
+		INNER JOIN igm_sup_detail_container_copy ON igm_sup_detail_container_copy.igm_sup_detail_id=igm_supplimentary_detail_copy.id 
+		
+		
+		
+		WHERE igm_supplimentary_detail_copy.Import_Rotation_No='2017/498' AND BL_No='FSECGP17020050-05' AND cont_number='SKLU2203903'
+
+
+
+
+SELECT id FROM edo_application_by_cf WHERE rotation='$impRot' AND bl='$blNo'
+
+
+
+UPDATE edo_application_by_cf SET cont_status='$contStatus' WHERE rotation='$impRot' AND bl='$blNo'
+
+
+
+SELECT igm_sup_detail_container.id,cont_status
+FROM igm_supplimentary_detail 
+INNER JOIN igm_sup_detail_container ON igm_sup_detail_container.igm_sup_detail_id=igm_supplimentary_detail.id
+WHERE igm_supplimentary_detail.Import_Rotation_No='2017/498' AND BL_No='$blNo' AND cont_number='$contNo'
+
+
+
+
+2022/1668   COAU7237356440      TCNU4451440
+
+
+SELECT * FROM edo_application_by_cf_copy WHERE rotation='2022/1668' AND bl='COAU7237356440'
+
+
+SELECT bl,rotation,edo_application_by_cf_backup.cont_status
+FROM edo_application_by_cf_backup
+INNER JOIN igm_details_copy ON edo_application_by_cf_backup.bl=igm_details_copy.BL_No
+INNER JOIN igm_detail_container_copy ON igm_detail_container_copy.igm_detail_id=igm_details_copy.id
+ORDER BY edo_application_by_cf_backup.id DESC
+
+
+
+SELECT bl,rotation,edo_application_by_cf.cont_status
+FROM edo_application_by_cf
+INNER JOIN igm_details ON edo_application_by_cf.bl=igm_details.BL_No
+INNER JOIN igm_detail_container ON igm_detail_container.igm_detail_id=igm_details.id
+ORDER BY edo_application_by_cf.id DESC
